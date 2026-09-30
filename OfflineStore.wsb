@@ -1,0 +1,22 @@
+<Configuration>
+  <MemoryInMB>16384</MemoryInMB>
+  <vGPU>Enable</vGPU>
+  <Networking>Disable</Networking>
+  <ProcessorCount>6</ProcessorCount>
+  <AllowClipboardRedirection>Enable</AllowClipboardRedirection>
+  <MappedFolders>
+    <MappedFolder>
+      <HostFolder>C:\Windows\WinSxS</HostFolder>
+      <SandboxFolder>C:\HostWinSxS</SandboxFolder>
+      <ReadOnly>true</ReadOnly>
+    </MappedFolder>
+    <MappedFolder>
+      <HostFolder>C:\Program Files\WindowsApps</HostFolder>
+      <SandboxFolder>C:\HostWindowsApps</SandboxFolder>
+      <ReadOnly>true</ReadOnly>
+    </MappedFolder>
+  </MappedFolders>
+  <LogonCommand>
+    <Command>powershell.exe -NoProfile -WindowStyle Maximized -ExecutionPolicy Bypass -Command "Start-Process powershell -ArgumentList '-NoProfile -NoExit -ExecutionPolicy Bypass -File C:\Users\WDAGUtilityAccount\Desktop\DeployEngine.ps1' -Verb RunAs"</Command>
+  </LogonCommand>
+</Configuration>
